@@ -112,11 +112,6 @@ public class Controller {
 			row.getFourthButtonResult().setIcon(new ImageIcon("src/images/wrong.png"));
 			row.setFourthButtonResultStatus(Status.WRONG);
 		}
-//		System.out.println("Status: "+row.getFirstButtonResultStatus());
-//		System.out.println("Status: "+row.getSecondButtonResultStatus());
-//		System.out.println("Status: "+row.getThirdButtonResultStatus());
-//		System.out.println("Status: "+row.getFourthButtonResultStatus());
-//		System.out.println("==============");
 			
 	}
 	

@@ -13,6 +13,7 @@ import view.GameView;
 
 public class BotPlay
 {
+	
 		private GameView gameView;
 		private Controller controller;
 		
@@ -40,7 +41,6 @@ public class BotPlay
 		possibleSigns.clear();
 		confirmedSigns.clear();
 		wrongPlaceSigns.clear();
-		wrongPlaceSigns.clear();
 		possibleSigns.add(Signs.AI);
 		possibleSigns.add(Signs.CLOVER);
 		possibleSigns.add(Signs.DIAMOND);
@@ -56,7 +56,13 @@ public class BotPlay
 		{
 			
 			if(i > 0 && gameView.getCounter() ==1)
+			{
+				possibleSigns.clear();
+				confirmedSigns.clear();
+				wrongPlaceSigns.clear();
 				return;
+			}
+				
 			
 				randomise();
 			
@@ -105,8 +111,6 @@ public class BotPlay
 			}
 			
 			
-			
-			
 			controller.play(firstSign);
 			controller.play(secondSign);
 			controller.play(thirdSign);
@@ -135,6 +139,7 @@ public class BotPlay
 								wr.addTriedPosition(0);
 						}
 					}
+					possibleSigns.remove(firstSign);
 				}
 			
 			//////
@@ -161,6 +166,7 @@ public class BotPlay
 								wr.addTriedPosition(1);
 						}
 					}
+					possibleSigns.remove(secondSign);
 				}
 			
 			//////
@@ -187,6 +193,7 @@ public class BotPlay
 								wr.addTriedPosition(2);
 						}
 					}
+					possibleSigns.remove(thirdSign);
 				}
 			
 			//////
@@ -213,6 +220,7 @@ public class BotPlay
 								wr.addTriedPosition(3);
 						}
 					}
+					possibleSigns.remove(fourthSign);
 				}
 			
 			System.out.println("-------------");
@@ -222,18 +230,9 @@ public class BotPlay
 			System.out.println("-------------");
 			
 			
-				
-			try
-			{
-				Thread.sleep(10);
-			} catch (InterruptedException e1)
-			{
-				e1.printStackTrace();
-			}
 
 		}
 	}
-		
 		
 	
 	private void randomise()
@@ -245,5 +244,25 @@ public class BotPlay
 		thirdSign = possibleSigns.get(r.nextInt(possibleSigns.size()));
 		fourthSign = possibleSigns.get(r.nextInt(possibleSigns.size()));
 	}
+
+
+	public ArrayList<Signs> getPossibleSigns()
+	{
+		return possibleSigns;
+	}
+
+
+	public ArrayList<ConfirmedSign> getConfirmedSigns()
+	{
+		return confirmedSigns;
+	}
+
+
+	public ArrayList<WrongPlaceSign> getWrongPlaceSigns()
+	{
+		return wrongPlaceSigns;
+	}
+	
+	 
 	
 }

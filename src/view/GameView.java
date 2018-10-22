@@ -118,7 +118,9 @@ public class GameView extends JPanel
 		signs.add(secondSign);
 		signs.add(thirdSign);
 		signs.add(fourthSign);
-		botPlayer = null;
+		botPlayer.getConfirmedSigns().clear();
+		botPlayer.getPossibleSigns().clear();
+		botPlayer.getWrongPlaceSigns().clear();
 	}
 	
 	private void randomiseSigns()
