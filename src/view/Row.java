@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 
 import controller.Controller;
 import model.Signs;
+import model.Status;
 
 public class Row extends JPanel
 {
@@ -20,9 +21,13 @@ public class Row extends JPanel
 	private JButton separator;
 	
 	private JButton firstButtonResult;
+	private Status firstButtonResultStatus;
 	private JButton secondButtonResult;
+	private Status secondButtonResultStatus;
 	private JButton thirdButtonResult;
+	private Status thirdButtonResultStatus;
 	private JButton fourthButtonResult;
+	private Status fourthButtonResultStatus; 
 	
 	private int counter = 1;
 	
@@ -101,6 +106,46 @@ public class Row extends JPanel
 	public JButton getFirstButtonResult()
 	{
 		return firstButtonResult;
+	}
+
+	public Status getFirstButtonResultStatus()
+	{
+		return firstButtonResultStatus;
+	}
+
+	public void setFirstButtonResultStatus(Status firstButtonResultStatus)
+	{
+		this.firstButtonResultStatus = firstButtonResultStatus;
+	}
+
+	public Status getSecondButtonResultStatus()
+	{
+		return secondButtonResultStatus;
+	}
+
+	public void setSecondButtonResultStatus(Status secondButtonResultStatus)
+	{
+		this.secondButtonResultStatus = secondButtonResultStatus;
+	}
+
+	public Status getThirdButtonResultStatus()
+	{
+		return thirdButtonResultStatus;
+	}
+
+	public void setThirdButtonResultStatus(Status thirdButtonResultStatus)
+	{
+		this.thirdButtonResultStatus = thirdButtonResultStatus;
+	}
+
+	public Status getFourthButtonResultStatus()
+	{
+		return fourthButtonResultStatus;
+	}
+
+	public void setFourthButtonResultStatus(Status fourthButtonResultStatus)
+	{
+		this.fourthButtonResultStatus = fourthButtonResultStatus;
 	}
 
 	public JButton getSecondButtonResult()

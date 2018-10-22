@@ -1,13 +1,17 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import controller.BotPlay;
 import model.Signs;
 
 public class GameView extends JPanel
@@ -35,6 +39,8 @@ public class GameView extends JPanel
 	private ArrayList<Row> rows = new ArrayList<>();
 	private ArrayList<Signs> signs = new ArrayList<>();
 	
+	private JButton botPlay;
+	
 	
 	private GameView()
 	{
@@ -61,6 +67,17 @@ public class GameView extends JPanel
 		rows.add(fifthRow);
 		rows.add(sixthRow);
 		rows.add(seventhRow);
+		
+		botPlay = new JButton("Let me play!");
+		botPlay.setIcon(new ImageIcon("src/images/robot.png"));
+		botPlay.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				new BotPlay();
+			}
+		});
 		
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
@@ -157,6 +174,8 @@ public class GameView extends JPanel
 		playButtons = PlayButtons.getInstance();
 		
 		add(playButtons);
+		
+		add(botPlay);	
 	}
 
 

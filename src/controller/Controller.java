@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import model.Signs;
+import model.Status;
 import view.GameView;
 import view.MainFrame;
 import view.Row;
@@ -29,6 +30,8 @@ public class Controller {
 	
 	public void checkResult(Row row)
 	{
+		
+		
 		if(row.getFirstButtonStatus() == gameView.getFirstSign())
 			if(row.getSecondButtonStatus() == gameView.getSecondSign())
 				if(row.getThirdButtonStatus() == gameView.getThirdSign())
@@ -49,55 +52,71 @@ public class Controller {
 		if(row.getFirstButtonStatus() == gameView.getSigns().get(0))
 		{
 			row.getFirstButtonResult().setIcon(new ImageIcon("src/images/likeGreen.png"));
+			row.setFirstButtonResultStatus(Status.RIGHT);
 		}
 		else if(gameView.getSigns().contains(row.getFirstButtonStatus()))
 		{
 			row.getFirstButtonResult().setIcon(new ImageIcon("src/images/likeYellow.png"));
+			row.setFirstButtonResultStatus(Status.WRONG_PLACE);
 		}
 		else
 		{
 			row.getFirstButtonResult().setIcon(new ImageIcon("src/images/wrong.png"));
+			row.setFirstButtonResultStatus(Status.WRONG);
 		}
 		
 		if(row.getSecondButtonStatus() == gameView.getSigns().get(1))
 		{
 			row.getSecondButtonResult().setIcon(new ImageIcon("src/images/likeGreen.png"));
+			row.setSecondButtonResultStatus(Status.RIGHT);
 		}
 		else if(gameView.getSigns().contains(row.getSecondButtonStatus()))
 		{
 			row.getSecondButtonResult().setIcon(new ImageIcon("src/images/likeYellow.png"));
+			row.setSecondButtonResultStatus(Status.WRONG_PLACE);
 		}
 		else
 		{
 			row.getSecondButtonResult().setIcon(new ImageIcon("src/images/wrong.png"));
+			row.setSecondButtonResultStatus(Status.WRONG);
 		}
 		
 		if(row.getThirdButtonStatus() == gameView.getSigns().get(2))
 		{
 			row.getThirdButtonResult().setIcon(new ImageIcon("src/images/likeGreen.png"));
+			row.setThirdButtonResultStatus(Status.RIGHT);
 		}
 		else if(gameView.getSigns().contains(row.getThirdButtonStatus()))
 		{
 			row.getThirdButtonResult().setIcon(new ImageIcon("src/images/likeYellow.png"));
+			row.setThirdButtonResultStatus(Status.WRONG_PLACE);
 		}
 		else
 		{
 			row.getThirdButtonResult().setIcon(new ImageIcon("src/images/wrong.png"));
+			row.setThirdButtonResultStatus(Status.WRONG);
 		}
 		
 		if(row.getFourthButtonStatus() == gameView.getSigns().get(3))
 		{
 			row.getFourthButtonResult().setIcon(new ImageIcon("src/images/likeGreen.png"));
+			row.setFourthButtonResultStatus(Status.RIGHT);
 		}
 		else if(gameView.getSigns().contains(row.getFourthButtonStatus()))
 		{
 			row.getFourthButtonResult().setIcon(new ImageIcon("src/images/likeYellow.png"));
+			row.setFourthButtonResultStatus(Status.WRONG_PLACE);
 		}
 		else
 		{
 			row.getFourthButtonResult().setIcon(new ImageIcon("src/images/wrong.png"));
+			row.setFourthButtonResultStatus(Status.WRONG);
 		}
-		
+//		System.out.println("Status: "+row.getFirstButtonResultStatus());
+//		System.out.println("Status: "+row.getSecondButtonResultStatus());
+//		System.out.println("Status: "+row.getThirdButtonResultStatus());
+//		System.out.println("Status: "+row.getFourthButtonResultStatus());
+//		System.out.println("==============");
 			
 	}
 	

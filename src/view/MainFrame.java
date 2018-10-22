@@ -22,6 +22,8 @@ public class MainFrame extends JFrame
 		
 		gameView.addingPlayButtons();
 		
+		
+		
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize();
 		setSize(screenSize.width/2, screenSize.height/2+200);
