@@ -1,9 +1,11 @@
 package controller;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 import model.Signs;
 import view.GameView;
+import view.MainFrame;
 import view.Row;
 
 public class Controller {
@@ -24,6 +26,7 @@ public class Controller {
 		return instance;
 	}
 	
+	
 	public void checkResult(Row row)
 	{
 		if(row.getFirstButtonStatus() == gameView.getFirstSign())
@@ -31,8 +34,17 @@ public class Controller {
 				if(row.getThirdButtonStatus() == gameView.getThirdSign())
 					if(row.getFourthButtonStatus() == gameView.getFourthSign())
 					{
-						System.out.println("Uspeh!");
+					JOptionPane.showMessageDialog(MainFrame.getInstance(), "Bravo, pobedio si!", "Čestitamo!", JOptionPane.INFORMATION_MESSAGE);
+					gameView.restart();
+					return;
 					}
+		
+		if(gameView.getCounter() == 8)
+		{
+			JOptionPane.showMessageDialog(MainFrame.getInstance(), "Nažalost nisi uspeo :(", "Uaa", JOptionPane.INFORMATION_MESSAGE);
+			gameView.restart();
+			return;
+		}
 		
 		if(row.getFirstButtonStatus() == gameView.getSigns().get(0))
 		{
@@ -116,8 +128,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -141,8 +153,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -166,8 +178,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -191,8 +203,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -216,8 +228,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -241,8 +253,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -266,8 +278,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;
@@ -297,8 +309,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -322,8 +334,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -347,8 +359,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -372,8 +384,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -397,8 +409,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -422,8 +434,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -447,8 +459,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;
@@ -478,8 +490,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -503,8 +515,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -528,8 +540,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -553,8 +565,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -578,8 +590,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -603,8 +615,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -628,8 +640,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;
@@ -659,8 +671,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -684,8 +696,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -709,8 +721,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -734,8 +746,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -759,8 +771,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -784,8 +796,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -809,8 +821,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;
@@ -840,8 +852,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -865,8 +877,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -890,8 +902,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -915,8 +927,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -940,8 +952,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -965,8 +977,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -990,8 +1002,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;
@@ -1021,8 +1033,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(0).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(0).increaseCounter();
 					gameView.getRows().get(0).setFourthButtonStatus(sign);
+					gameView.getRows().get(0).increaseCounter();
 					break;
 				}
 				break;
@@ -1046,8 +1058,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(1).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(1).increaseCounter();
 					gameView.getRows().get(1).setFourthButtonStatus(sign);
+					gameView.getRows().get(1).increaseCounter();
 					break;
 				}
 				break;
@@ -1071,8 +1083,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(2).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(2).increaseCounter();
 					gameView.getRows().get(2).setFourthButtonStatus(sign);
+					gameView.getRows().get(2).increaseCounter();
 					break;
 				}
 				break;
@@ -1096,8 +1108,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(3).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(3).increaseCounter();
 					gameView.getRows().get(3).setFourthButtonStatus(sign);
+					gameView.getRows().get(3).increaseCounter();
 					break;
 				}
 				break;
@@ -1121,8 +1133,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(4).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(4).increaseCounter();
 					gameView.getRows().get(4).setFourthButtonStatus(sign);
+					gameView.getRows().get(4).increaseCounter();
 					break;
 				}
 				break;
@@ -1146,8 +1158,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(5).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(5).increaseCounter();
 					gameView.getRows().get(5).setFourthButtonStatus(sign);
+					gameView.getRows().get(5).increaseCounter();
 					break;
 				}
 				break;
@@ -1171,8 +1183,8 @@ public class Controller {
 					break;
 				case 4:
 					gameView.getRows().get(6).getFourthButton().setIcon(new ImageIcon("src/images/"+sign.toString().toLowerCase()+".png"));
-					gameView.getRows().get(6).increaseCounter();
 					gameView.getRows().get(6).setFourthButtonStatus(sign);
+					gameView.getRows().get(6).increaseCounter();
 					break;
 				}
 				break;

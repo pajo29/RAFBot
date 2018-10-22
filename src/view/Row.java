@@ -63,6 +63,36 @@ public class Row extends JPanel
 		}
 	}
 
+	public void setSeparator(JButton separator)
+	{
+		this.separator = separator;
+	}
+
+	public void setFirstButtonResult(JButton firstButtonResult)
+	{
+		this.firstButtonResult = firstButtonResult;
+	}
+
+	public void setSecondButtonResult(JButton secondButtonResult)
+	{
+		this.secondButtonResult = secondButtonResult;
+	}
+
+	public void setThirdButtonResult(JButton thirdButtonResult)
+	{
+		this.thirdButtonResult = thirdButtonResult;
+	}
+
+	public void setFourthButtonResult(JButton fourthButtonResult)
+	{
+		this.fourthButtonResult = fourthButtonResult;
+	}
+
+	public void setCounter(int counter)
+	{
+		this.counter = counter;
+	}
+
 	public JButton getSeparator()
 	{
 		return separator;

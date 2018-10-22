@@ -71,6 +71,33 @@ public class GameView extends JPanel
 		signs.add(fourthSign);
 	}
 	
+	public void restart()
+	{
+		counter = 1;
+		for(int i = 0; i < 7; i++)
+		{
+			rows.get(i).setCounter(1);
+			rows.get(i).getFirstButton().setIcon(new ImageIcon(""));
+			rows.get(i).getSecondButton().setIcon(new ImageIcon(""));
+			rows.get(i).getThirdButton().setIcon(new ImageIcon(""));
+			rows.get(i).getFourthButton().setIcon(new ImageIcon(""));
+			rows.get(i).getFirstButtonResult().setIcon(new ImageIcon(""));
+			rows.get(i).getSecondButtonResult().setIcon(new ImageIcon(""));
+			rows.get(i).getThirdButtonResult().setIcon(new ImageIcon(""));
+			rows.get(i).getFourthButtonResult().setIcon(new ImageIcon(""));
+			rows.get(i).setFirstButtonStatus(null);
+			rows.get(i).setSecondButtonStatus(null);
+			rows.get(i).setThirdButtonStatus(null);
+			rows.get(i).setFourthButtonStatus(null);
+		}
+		randomiseSigns();
+		signs.clear();
+		signs.add(firstSign);
+		signs.add(secondSign);
+		signs.add(thirdSign);
+		signs.add(fourthSign);
+	}
+	
 	private void randomiseSigns()
 	{
 		Random rand = new Random();
@@ -84,6 +111,7 @@ public class GameView extends JPanel
 		thirdSign = Signs.values()[third];
 		fourthSign = Signs.values()[fourth];
 		
+		System.out.println("====================");
 		System.out.println(firstSign);
 		System.out.println(secondSign);
 		System.out.println(thirdSign);
