@@ -37,7 +37,9 @@ public class Controller {
 				if(row.getThirdButtonStatus() == gameView.getThirdSign())
 					if(row.getFourthButtonStatus() == gameView.getFourthSign())
 					{
-					JOptionPane.showMessageDialog(MainFrame.getInstance(), "Bravo, pobedio si!", "Čestitamo!", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(MainFrame.getInstance(), "Bravo, pobedio si!\nKombinacija je bila:\n"
+							+ "1: "+gameView.getFirstSign()+" 2: "+gameView.getSecondSign()
+							+" 3: "+gameView.getThirdSign()+" 4: "+gameView.getFourthSign(), "Čestitamo!", JOptionPane.INFORMATION_MESSAGE);
 					gameView.restart();
 					return;
 					}
