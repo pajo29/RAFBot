@@ -41,6 +41,7 @@ public class GameView extends JPanel
 	
 	private JButton botPlay;
 	
+	private BotPlay botPlayer;
 	
 	private GameView()
 	{
@@ -75,7 +76,7 @@ public class GameView extends JPanel
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				new BotPlay();
+				botPlayer = new BotPlay();
 			}
 		});
 		
@@ -106,6 +107,10 @@ public class GameView extends JPanel
 			rows.get(i).setSecondButtonStatus(null);
 			rows.get(i).setThirdButtonStatus(null);
 			rows.get(i).setFourthButtonStatus(null);
+			rows.get(i).setFirstButtonResultStatus(null);
+			rows.get(i).setSecondButtonResultStatus(null);
+			rows.get(i).setThirdButtonResultStatus(null);
+			rows.get(i).setFourthButtonResultStatus(null);
 		}
 		randomiseSigns();
 		signs.clear();
@@ -113,6 +118,7 @@ public class GameView extends JPanel
 		signs.add(secondSign);
 		signs.add(thirdSign);
 		signs.add(fourthSign);
+		botPlayer = null;
 	}
 	
 	private void randomiseSigns()
