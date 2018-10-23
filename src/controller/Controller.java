@@ -46,7 +46,9 @@ public class Controller {
 		
 		if(gameView.getCounter() == 8)
 		{
-			JOptionPane.showMessageDialog(MainFrame.getInstance(), "Nažalost nisi uspeo :(", "Uaa", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(MainFrame.getInstance(), "Nažalost nisi uspeo :(\nKombinacija je bila:\n"
+					+" 1: "+gameView.getFirstSign()+" 2: "+gameView.getSecondSign()
+					+" 3: "+gameView.getThirdSign()+" 4: "+gameView.getFourthSign(), "Uaa", JOptionPane.INFORMATION_MESSAGE);
 			gameView.restart();
 			return;
 		}
